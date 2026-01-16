@@ -12,7 +12,7 @@ export default function ApiScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>LISTA API</Text>
+      <Text style={styles.title}>LISTA DE CRASH</Text>
       <FlatList
         data={data}
         keyExtractor={(item: any) => item.id}
@@ -20,7 +20,8 @@ export default function ApiScreen() {
           <View style={styles.card}>
             <View style={styles.textContainer}>
               <Text style={styles.name}>{item.name}</Text>
-              <Text>{item.description}</Text>
+             
+              <Text style={styles.description}>{item.description}</Text>
             </View>
             <Image source={{ uri: item.image }} style={styles.image} />
           </View>
@@ -34,34 +35,41 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', 
     paddingTop: 50,
   },
   title: {
-    fontSize: 24,
+    fontSize: 26, 
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
+    color: '#000', 
   },
   card: {
     flexDirection: 'row',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#777777ea', 
     marginBottom: 10,
-    padding: 10,
+    padding: 15,
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
   },
   textContainer: {
     flex: 1,
-    paddingRight: 10,
+    paddingRight: 15,
   },
   name: {
-    fontSize: 18,
+    fontSize: 22, 
     fontWeight: 'bold',
+    color: '#fff', 
+    marginBottom: 5,
+  },
+  description: {
+    fontSize: 16, 
+    color: '#fff', 
   },
   image: {
-    width: 60,
-    height: 60,
-    borderRadius: 30, 
+    width: 85,   
+    height: 85,
+    borderRadius: 10, 
   },
 });
